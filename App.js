@@ -2,12 +2,11 @@ import React from 'react';
 import { StyleSheet, View, Text, Image, SafeAreaView, Dimensions, TouchableOpacity, StatusBar } from 'react-native';
 import AppIntroSlider from 'react-native-app-intro-slider';
 import Navigator from './src/config/Navigation/Navigation';
-
-
-import { AppLoading } from 'expo';
+import { LinearGradient } from 'expo-linear-gradient';
 import * as Font from 'expo-font';
 import { Ionicons } from '@expo/vector-icons';
 var deviceWidth = Dimensions.get('window').width;
+var Height = Dimensions.get('window').height;
 
 export default class App extends React.Component {
   constructor(props) {
@@ -46,21 +45,21 @@ export default class App extends React.Component {
 
   _renderItem = ({ item }) => {
     return (
-      <View
-        style={{
-          flex: 1,
-          backgroundColor: item.backgroundColor,
-          alignItems: 'center',
-          justifyContent: 'center',
-          paddingBottom: 100
-        }}>
-        <TouchableOpacity style={{ flexDirection: "row" }} onPress={() => this.setState({ showRealApp: true })}>
-          <Text style={{ marginLeft: deviceWidth - 70, fontSize: 18, marginTop: 25, color: 'white', }}>Skip</Text>
-        </TouchableOpacity>
-        <Image style={styles.image} source={item.image} />
-        <Text style={styles.title}>{item.title}</Text>
-        <Text style={styles.text}>{item.text}</Text>
-      </View>
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <LinearGradient
+          start={[0.01, 0.02]}
+          colors={['#A383D6', '#6B55C9']}
+          style={{ flex: 1, alignItems: 'center' }}>
+          <TouchableOpacity style={{ flexDirection: "row" }} onPress={() => this.setState({ showRealApp: true })}>
+            <Text style={{ marginLeft: deviceWidth - 70, fontSize: 18, marginTop: 30, color: 'white', }}>Skip</Text>
+            <Ionicons name='md-arrow-forward' style={{ color: 'white', marginTop: 34, marginLeft: 10, marginRight: 10 }} size={20} />
+
+          </TouchableOpacity>
+          <Image style={styles.image} source={item.image} />
+          <Text style={styles.title}>{item.title}</Text>
+          <Text style={styles.text}>{item.text}</Text>
+        </LinearGradient>
+      </View >
     );
   };
   render() {
@@ -93,7 +92,7 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   SafeArea: {
     flex: 1,
-    marginTop: 23
+    marginTop: 24
   },
   image: {
     width: 200,
@@ -109,7 +108,7 @@ const styles = StyleSheet.create({
     marginVertical: 15
   },
   title: {
-    fontSize: 30,
+    fontSize: 25,
     color: 'white',
     textAlign: 'center',
   },
@@ -137,7 +136,7 @@ const slides = [
     titleStyle: styles.title,
     textStyle: styles.text,
     imageStyle: styles.image,
-    backgroundColor: '#6B55C9',
+    backgroundColor: ['#4c669f', '#3b5998', '#192f6a'],
   },
   {
     key: 'k2',

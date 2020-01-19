@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { List, ListItem, Text, Left, Body, Right, Button, View, } from 'native-base';
-import { Dimensions, StyleSheet, Alert } from 'react-native';
+import { Dimensions, StyleSheet, Alert, Image } from 'react-native';
 const Width = Dimensions.get('window').width;
 import Icon from 'react-native-vector-icons/Feather';
 import { TouchableOpacity } from 'react-native-gesture-handler';
@@ -12,24 +12,25 @@ export default class ListThumbnailExample extends Component {
             <List style={styles.list} >
 
                 {/* <ListItem thumbnail onPress={this.props.navigation.navigate("Home2")}> */}
-                <ListItem thumbnail 
-                onPress={() => {
-              this.props.props.navigation.navigate(this.props.route)
-            }}
-             >
+                <ListItem thumbnail
+                    onPress={() => {
+                        this.props.props.navigation.navigate(this.props.route)
+                    }}
+                >
                     <Left>
                         <View style={styles.iconContainer} >
-                            <Icon
-                                name={this.props.iconName}
-                                size={25}
-                                style={styles.icon}
-                            />
+                            {
+                                <Image
+                                    style={{ alignSelf: 'center', }}
+                                    source={this.props.src}
+                                />
+                            }
 
                         </View>
 
                     </Left>
                     <Body>
-                        <Text style={{ fontSize: 14 }}>{this.props.name}</Text>
+                        <Text style={{ fontSize: 14, fontWeight: "800" }}>{this.props.name}</Text>
                         <Text note numberOfLines={1}>{this.props.info}</Text>
                     </Body>
                     <Right>
@@ -51,15 +52,17 @@ export default class ListThumbnailExample extends Component {
 
 const styles = StyleSheet.create({
     list: {
-        width: Width - 25,
+        width: Width - 30,
         marginBottom: 10,
         elevation: 1,
         backgroundColor: 'white',
         borderRadius: 10
     },
     iconContainer: {
-        width: 70,
-        height: 80,
+        width: 60,
+        borderTopStartRadius: 10,
+        borderBottomStartRadius: 10,
+        height: 79,
         justifyContent: "center",
         alignItems: "center",
         backgroundColor: "#D3CCEF",

@@ -37,7 +37,7 @@ class Login extends React.Component {
             source={require('../../assests/logo.png')}
           />
           <View style={{ alignSelf: 'center' }}>
-            <KeyboardAvoidingView behavior="padding-top" enabled>
+            <KeyboardAvoidingView behavior="padding" enabled>
               <Input placeholder="E-mail" />
               <Input placeholder="Password" password={true} />
             </KeyboardAvoidingView>

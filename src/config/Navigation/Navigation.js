@@ -1,7 +1,6 @@
 import React from 'react'
-
 import { Text, View } from 'react-native'
-
+import { LinearGradient } from 'expo-linear-gradient';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createBottomTabNavigator } from "react-navigation-tabs";
@@ -10,7 +9,7 @@ import FontAwesome from "react-native-vector-icons/FontAwesome";
 
 // We import our screens from screens folder
 
-import { Welcome, Signup,CongratulationAuth , Login, Congratulation, HomeScreen,HomeScreen2 , HomeScreen3 , MainScreen, ReportScreen, DiaryScreen, ConsultScreen } from '../../screens';
+import { Welcome, Signup, CongratulationAuth, Login, Congratulation, HomeScreen, HomeScreen2, HomeScreen3, MainScreen, ReportScreen, DiaryScreen, ConsultScreen } from '../../screens';
 
 
 
@@ -48,21 +47,33 @@ const TabNavigator = createBottomTabNavigator(
     Main: {
       screen: MainScreen,
       navigationOptions: {
-        tabBarIcon: ({ focused, tintColor }) =>
-          focused ? (
-            <View style={{ width: 60, height: 60, borderRadius: 50, backgroundColor: '#6B55C9', marginBottom: 15, paddingBottom: 5, justifyContent: 'center', alignItems: "center" }}>
-              <Text style={{ fontSize: 45, fontWeight: "900", color: "white", }}>
-                +
+        tabBarIcon: ({ tintColor }) =>
+          <LinearGradient
+            start={[2, 3]}
+            colors={['#E4B8E6', '#6B55C9']}
+            style={{
+              width: 60, fontSize: 40, height: 60,
+              borderRadius: 50, fontWeight: "900", color: 'white',
+              backgroundColor: '#6B55C9', textAlign: "center",
+              marginBottom: 16,
+
+            }}
+          >
+
+            <Text style={{
+              fontSize: 45, textAlign: 'center',
+              color: 'white',
+              shadowColor: 'black',
+              shadowOffset: {
+                width: 10,
+                height: 10
+              }
+            }}>
+              +
             </Text>
 
-            </View>
-          ) : (
-              <View style={{ width: 60, height: 60, borderRadius: 50, backgroundColor: '#6B55C9', marginBottom: 15, paddingBottom: 5, justifyContent: 'center', alignItems: "center" }}>
-                <Text style={{ fontSize: 45, fontWeight: "900", color: "white", }}>
-                  +
-              </Text>
-              </View>
-            )
+          </LinearGradient>
+
       }
     },
     Report: {
@@ -102,8 +113,12 @@ const TabNavigator = createBottomTabNavigator(
       showLabel: false,
       activeTintColor: "#6B55C9",
       inactiveTintColor: "#959CA7",
+      style: {
+        borderTopWidth: 0,
+        borderTopColor: "white"
+      },
       tabStyle: {
-        backgroundColor: "transparent"
+        backgroundColor: "transparent",
       }
     }
   }
@@ -125,7 +140,7 @@ const TabNavigator2 = createBottomTabNavigator(
         )
       }
     },
- 
+
     Diary: {
       screen: DiaryScreen,
       navigationOptions: {
@@ -144,21 +159,33 @@ const TabNavigator2 = createBottomTabNavigator(
     Main: {
       screen: MainScreen,
       navigationOptions: {
-        tabBarIcon: ({ focused, tintColor }) =>
-          focused ? (
-            <View style={{ width: 60, height: 60, borderRadius: 50, backgroundColor: '#6B55C9', marginBottom: 15, paddingBottom: 5, justifyContent: 'center', alignItems: "center" }}>
-              <Text style={{ fontSize: 45, fontWeight: "900", color: "white", }}>
-                +
+        tabBarIcon: ({ tintColor }) =>
+          <LinearGradient
+            start={[2, 3]}
+            colors={['#E4B8E6', '#6B55C9']}
+            style={{
+              width: 60, fontSize: 40, height: 60,
+              borderRadius: 50, fontWeight: "900", color: 'white',
+              backgroundColor: '#6B55C9', textAlign: "center",
+              marginBottom: 16,
+
+            }}
+          >
+
+            <Text style={{
+              fontSize: 45, textAlign: 'center',
+              color: 'white',
+              shadowColor: 'black',
+              shadowOffset: {
+                width: 10,
+                height: 10
+              }
+            }}>
+              +
             </Text>
 
-            </View>
-          ) : (
-              <View style={{ width: 60, height: 60, borderRadius: 50, backgroundColor: '#6B55C9', marginBottom: 15, paddingBottom: 5, justifyContent: 'center', alignItems: "center" }}>
-                <Text style={{ fontSize: 45, fontWeight: "900", color: "white", }}>
-                  +
-              </Text>
-              </View>
-            )
+          </LinearGradient>
+
       }
     },
     Report: {
@@ -220,7 +247,7 @@ const TabNavigator3 = createBottomTabNavigator(
         )
       }
     },
- 
+
     Diary: {
       screen: DiaryScreen,
       navigationOptions: {
@@ -239,21 +266,34 @@ const TabNavigator3 = createBottomTabNavigator(
     Main: {
       screen: MainScreen,
       navigationOptions: {
-        tabBarIcon: ({ focused, tintColor }) =>
-          focused ? (
-            <View style={{ width: 60, height: 60, borderRadius: 50, backgroundColor: '#6B55C9', marginBottom: 15, paddingBottom: 5, justifyContent: 'center', alignItems: "center" }}>
-              <Text style={{ fontSize: 45, fontWeight: "900", color: "white", }}>
-                +
+        tabBarIcon: ({ tintColor }) =>
+          <LinearGradient
+            start={[2, 3]}
+            colors={['#E4B8E6', '#6B55C9']}
+            style={{
+              width: 60, fontSize: 40, height: 60,
+              borderRadius: 50, fontWeight: "900", color: 'white',
+              backgroundColor: '#6B55C9', textAlign: "center",
+              marginBottom: 16,
+
+            }}
+          >
+
+            <Text style={{
+              fontSize: 45,
+              textAlign: 'center',
+              color: 'white',
+              shadowColor: 'black',
+              shadowOffset: {
+                width: 10,
+                height: 10
+              }
+            }}>
+              +
             </Text>
 
-            </View>
-          ) : (
-              <View style={{ width: 60, height: 60, borderRadius: 50, backgroundColor: '#6B55C9', marginBottom: 15, paddingBottom: 5, justifyContent: 'center', alignItems: "center" }}>
-                <Text style={{ fontSize: 45, fontWeight: "900", color: "white", }}>
-                  +
-              </Text>
-              </View>
-            )
+          </LinearGradient>
+
       }
     },
     Report: {

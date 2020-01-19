@@ -32,11 +32,11 @@ class Home extends React.Component {
                     <Text style={[styles.txt, { fontWeight: 'bold', fontSize: 24 }]}>
                         Good morning John
                     </Text>
-                    <Icon
-                        name="activity"
-                        size={15}
-                        style={[styles.icon, { alignSelf: 'center' }]}
-                        onPress={() => this.props.path.navigation.goBack()}
+
+
+                    <Image
+                        style={{ alignSelf: 'center', marginTop: 7, marginBottom: 7 }}
+                        source={require('../../assests/path2706.png')}
                     />
                     <View style={[styles.congrats, { marginLeft: 40, }]}>
                         <View >
@@ -55,14 +55,14 @@ class Home extends React.Component {
 
                 </View>
                 <View style={{ marginTop: -100, paddingTop: 15, backgroundColor: "#" }}>
-                <Card sliderValue={0} noSteps={0} />
+                    <Card sliderValue={0} noSteps={0} />
                 </View>
                 <ScrollView style={{ flex: 1 }}>
                     <View style={styles.bodyContainer}>
-                    <Text style={styles.activityTxt}>SET YOUR ACTIVITIES:</Text>
-                        <List route="Home2" props={this.props}  name="Complete your medical data" iconName="credit-card" info="Visible to your doctor" />
-                        <List  name="Add your treatments" iconName="tablet" info="Set your reminders" />
-                        <List name="Schedule the health diary" iconName='book' info="Note symptoms and seizures" />
+                        <Text style={styles.activityTxt}>SET YOUR ACTIVITIES:</Text>
+                        <List route="Home2" props={this.props} name="Complete your medical data" src={require(`../../assests/Union12.png`)} info="Visible to your doctor" />
+                        <List name="Add your treatments" src={require(`../../assests/Union18.png`)} info="Set your reminders" />
+                        <List name="Schedule the health diary" src={require(`../../assests/Union21.png`)} info="Note symptoms and seizures" />
                     </View>
                 </ScrollView>
 

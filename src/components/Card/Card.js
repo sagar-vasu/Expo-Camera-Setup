@@ -15,19 +15,19 @@ export default class CardHeaderFooterExample extends Component {
                             Only 3 steps to start
                         </Text>
                         <Text style={{ marginTop: 10, color: '#6B737C', fontSize: 14 }}>
-        {this.props.noSteps}/3 completed
+                            {this.props.noSteps}/3 completed
                         </Text>
                     </View>
                     <View style={{ marginLeft: 30 }}>
                         <ProgressCircle
                             percent={this.props.sliderValue}
                             radius={50}
-                            borderWidth={13}
+                            borderWidth={12}
                             color="#6B55C9"
                             shadowColor="#f3f4f5"
                             bgColor="#fff"
                         >
-                            <Text style={{ fontSize: 18 }}>{this.props.sliderValue+'%'}</Text>
+                            <Text style={{ fontSize: 18 }}>{this.props.sliderValue + '%'}</Text>
                         </ProgressCircle>
                     </View>
                 </CardItem>

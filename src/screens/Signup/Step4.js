@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, ListItem, CheckBox, Body } from 'native-base';
+import { View, Text, } from 'native-base';
 import {
   StyleSheet,
   Image,
@@ -11,6 +11,7 @@ import {
 
 import Icon from 'react-native-vector-icons/Feather';
 import { Button, Input } from '../../components';
+import { LinearGradient } from 'expo-linear-gradient';
 
 class Step3 extends React.Component {
   constructor() {
@@ -24,22 +25,27 @@ class Step3 extends React.Component {
     return (
       <View style={styles.container}>
         <StatusBar backgroundColor="#6B55C9" barStyle="light-content" />
-        <Icon
-          name="arrow-left"
-          size={20}
-          style={[styles.icon]}
-          onPress={() => this.props.goBack(3)}
-        />
-        <View style={styles.imgConatiner}>
-          <Image
-            style={styles.img}
-            source={require('../../assests/message.png')}
+        <LinearGradient
+          start={[0.01, 0.02]}
+          colors={['#A383D6', '#6B55C9']}
+          style={{ flex: 1, }}>
+          <Icon
+            name="arrow-left"
+            size={20}
+            style={[styles.icon]}
+            onPress={() => this.props.goBack(3)}
           />
-          <Text style={[styles.txt, { fontWeight: 'bold', fontSize: 25 }]}>
-            Confirmation e-mail
+          <View style={styles.imgConatiner}>
+            <Image
+              style={styles.img}
+              source={require('../../assests/message.png')}
+            />
+            <Text style={[styles.txt, { fontWeight: 'bold', fontSize: 25 }]}>
+              Confirmation e-mail
           </Text>
-          <Text style={[styles.txt, { marginTop: 10 }]}>Step 3/3</Text>
-        </View>
+            <Text style={[styles.txt, { marginTop: 10 }]}>Step 3/3</Text>
+          </View>
+        </LinearGradient>
         <ScrollView style={{ flex: 1 }}>
           <View style={{ padding: 23 }}>
             <Text style={styles.accountTxt}>
@@ -67,7 +73,6 @@ class Step3 extends React.Component {
                 color="white"
                 border="#6B55C9"
                 onPress={() => this.props.path.navigation.navigate("Congrats")}
-
                 width={140}
               />
               <Button
@@ -95,7 +100,6 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   icon: {
-    backgroundColor: '#6B55C9',
     paddingLeft: 20,
     paddingTop: 20,
     color: 'white',
@@ -103,7 +107,6 @@ const styles = StyleSheet.create({
   imgConatiner: {
     width: '100%',
     height: 220,
-    backgroundColor: '#6B55C9',
     alignSelf: 'center',
   },
   txt: {

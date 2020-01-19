@@ -11,6 +11,8 @@ import {
 
 import Icon from 'react-native-vector-icons/Feather';
 import { Button, Input } from '../../components';
+import { LinearGradient } from 'expo-linear-gradient';
+
 
 class Step3 extends React.Component {
   constructor() {
@@ -26,22 +28,27 @@ class Step3 extends React.Component {
     return (
       <View style={styles.container}>
         <StatusBar backgroundColor="#6B55C9" barStyle="light-content" />
-        <Icon
-          name="arrow-left"
-          size={20}
-          style={[styles.icon]}
-          onPress={() => this.props.goBack(1)}
-        />
-        <View style={styles.imgConatiner}>
-          <Image
-            style={styles.img}
-            source={require('../../assests/teddybear.jpg')}
+        <LinearGradient
+          start={[0.01, 0.02]}
+          colors={['#A383D6', '#6B55C9']}
+          style={{ flex: 1, }}>
+          <Icon
+            name="arrow-left"
+            size={20}
+            style={[styles.icon]}
+            onPress={() => this.props.goBack(1)}
           />
-          <Text style={[styles.txt, { fontWeight: 'bold', fontSize: 25 }]}>
-            Patient or Caregiver?
+          <View style={styles.imgConatiner}>
+            <Image
+              style={styles.img}
+              source={require('../../assests/teddybear.jpg')}
+            />
+            <Text style={[styles.txt, { fontWeight: 'bold', fontSize: 25 }]}>
+              Patient or Caregiver?
           </Text>
-          <Text style={[styles.txt, { marginTop: 10 }]}>Step 2/3</Text>
-        </View>
+            <Text style={[styles.txt, { marginTop: 10 }]}>Step 2/3</Text>
+          </View>
+        </LinearGradient>
         <ScrollView style={{ flex: 1 }}>
           <View style={styles.radioConatiner}>
             <TouchableOpacity
@@ -122,7 +129,6 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   icon: {
-    backgroundColor: '#6B55C9',
     paddingLeft: 20,
     paddingTop: 20,
     color: 'white',
@@ -130,7 +136,6 @@ const styles = StyleSheet.create({
   imgConatiner: {
     width: '100%',
     height: 220,
-    backgroundColor: '#6B55C9',
     alignSelf: 'center',
   },
   txt: {

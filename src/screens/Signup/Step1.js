@@ -11,6 +11,8 @@ import {
 
 import Icon from 'react-native-vector-icons/Feather';
 import { Button, Input, Dropdown } from '../../components';
+import { LinearGradient } from 'expo-linear-gradient';
+
 
 
 const country = [{ value: 'Country' }, { value: 'Pakistan' }, { value: 'India' }];
@@ -57,22 +59,29 @@ class Step1 extends React.Component {
     return (
       <View style={styles.container}>
         <StatusBar backgroundColor="#6B55C9" barStyle="light-content" />
-        <Icon
-          name="arrow-left"
-          size={20}
-          style={[styles.icon]}
-          onPress={() => this.props.goBack(2)}
-        />
-        <View style={styles.imgConatiner}>
-          <Image
-            style={styles.img}
-            source={require('../../assests/globe.png')}
+        <LinearGradient
+          start={[0.01, 0.02]}
+          colors={['#A383D6', '#6B55C9']}
+          style={{ flex: 1, }}>
+
+          <Icon
+            name="arrow-left"
+            size={20}
+            style={[styles.icon]}
+            onPress={() => this.props.path.navigation.goBack()}
           />
-          <Text style={[styles.txt, { fontWeight: 'bold', fontSize: 25 }]}>
-            Country & Language
+          <View style={styles.imgConatiner}>
+            <Image
+              style={styles.img}
+              source={require('../../assests/globe.png')}
+            />
+            <Text style={[styles.txt, { fontWeight: 'bold', fontSize: 25 }]}>
+              Country & Language
           </Text>
-          <Text style={[styles.txt, { marginTop: 10 }]}>Step 1/3</Text>
-        </View>
+            <Text style={[styles.txt, { marginTop: 10 }]}>Step 1/3</Text>
+          </View>
+        </LinearGradient>
+
         <ScrollView style={{ flex: 1 }}>
           <View>
             <View style={{ marginTop: 10, padding: 20, paddingTop: 5 }}>
@@ -122,7 +131,6 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   icon: {
-    backgroundColor: '#6B55C9',
     paddingLeft: 20,
     paddingTop: 20,
     color: 'white',
@@ -130,7 +138,6 @@ const styles = StyleSheet.create({
   imgConatiner: {
     width: '100%',
     height: 220,
-    backgroundColor: '#6B55C9',
     alignSelf: 'center',
   },
   txt: {

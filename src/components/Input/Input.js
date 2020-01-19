@@ -1,13 +1,13 @@
-import React, {Component} from 'react';
-import {StyleSheet, Dimensions, TextInput} from 'react-native';
-import {View} from 'native-base';
+import React, { Component } from 'react';
+import { StyleSheet, Dimensions, TextInput } from 'react-native';
+import { View } from 'native-base';
 
 const MaxWidth = Dimensions.get('window').width;
 
 export default class InlineLabelExample extends Component {
   render() {
     return (
-      <View style={{marginTop: 20}}>
+      <View style={{ marginTop: 20 }}>
         <TextInput
           style={Styles.input}
           onChangeText={this.props.onChangeText}
@@ -28,6 +28,7 @@ const Styles = StyleSheet.create({
     height: 40,
     borderBottomWidth: 1,
     borderColor: '#95989A',
-    fontWeight: '300',
+    fontWeight: 'bold',
+
   },
 });
